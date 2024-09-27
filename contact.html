@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="./CSS/contact.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgba(255, 255, 255, 0.237);">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="assets/logo.png" alt="" height="30px">
+            otalwale</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#Features">Features</a>
+              <a class="nav-link" href="#Hotalslist">Hotalslist</a>
+              <a class="nav-link" href="contact.html">contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+      <span class="big-circle"></span>
+      <img src="img/shape.png" class="square" alt="" />
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            We’d love to hear from you! Please fill out the form below, and we’ll get in touch as soon as possible.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
+
+              <p>92 Cherry Drive Uniondale, NY 11553</p>
+            </div>
+            <div class="information">
+              <i class="fas fa-envelope"></i> &nbsp &nbsp
+              <p>shivamkumarchaudhary321@gmail.com</p>
+            </div>
+            <div class="information">
+              <i class="fas fa-phone"></i>&nbsp&nbsp
+              <p>91-6299688390</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/login/">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://x.com/">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/accounts/login/">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://in.linkedin.com/">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form id="Hotelwale" autocomplete="off">
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" />
+              <label for="">Username</label>
+              <span>Please enter your first and last name.</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" />
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="contact.js"></script>
+    <script>
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbzncH7Z2yFb675SfUkqhVb2DxPj2DdUyeuXlox8NGDPgQJ4ugpSRB2r4isp8zleczFB/exec'
+			const form = document.forms['Hotelwale']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+		  </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
